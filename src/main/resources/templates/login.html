@@ -1,58 +1,48 @@
-<html xmlns:th="https://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Wine Tour Planner</title>
-	
-	<link rel="stylesheet" href="/css/winery-tour-planner.css">
+    <title>Login</title>
+	<link rel="stylesheet" type="text/css" href="/src/main/resources/static/LoginStyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel="icon" href="/src/main/resources/img/VinPlanLogo_preview_rev_1.png" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<<<<<<< Updated upstream
-    <div class="title-container">
-		 <center>
-		 <font class="title-font">Winery Tour Planner</font>
-		 </center>
-	</div>
-	<br/>
-	<br/>
-	<center>
-		<div class="form-login-container">
-		
-		<form name="form" th:action="@{/login}" method="post">
-			<div class="login-container" )>
-				<label for="username">Username</label>
-				<input type="text" id="username" name="username"/>
-				<label for="password">Password</label>
-				<input type="password" id="password" name="password"/>
-				<div class="form-actions">
-					<button type="submit" class="btn">Log in</button>
-				</div>
-			</div>	
-			
-			<div th:if="${param.error}" class="alert alert-error">
-				<span style="color:red">Invalid Username and Password</span>
-			</div>	
-			<div th:if="${param.logout}" class="alert alert-success">
-				<span style="color:red">You have been logged out.</span>
-			</div>
-				
-			<div align="center">
-				<button type="button" class="signupbtn"
-						onclick="window.location.href='/sign-up'">Sign Up</button>
-			</div>
-
-			<br/>
-			<a th:href="@{/forgot-password}">Forgot Password?</a>
-			<br/>
-			<br/>
-		</form>
-		
-=======
     
     <img class="wave" src="/src/main/resources/img/WaveRed.png">
 	<div class="container">
 		<div class="img">
 			<img src="/src/main/resources/img/bg.svg">
->>>>>>> Stashed changes
 		</div>
-	</center>	
+		<div class="login-content">
+			<form action="Login.html">
+				<img src="/src/main/resources/img/VinPlanLogo_preview_rev_1.png">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            	<a href="#">Forgot Password?</a>
+                <input type="submit" class="btn" value="Login">
+                <input type="submit" class="btn" value="Sign Up">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="/src/main/resources/static/js/LoginJScript.js"></script>
 </body>
-</html>		
+</html>	
