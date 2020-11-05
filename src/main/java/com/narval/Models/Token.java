@@ -1,4 +1,4 @@
-package com.narval.model;
+package com.narval.Models;
 
 import java.util.Date;
 import javax.persistence.Column;

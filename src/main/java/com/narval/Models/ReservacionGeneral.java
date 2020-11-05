@@ -1,4 +1,4 @@
-package com.narval.model;
+package com.narval.Models;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

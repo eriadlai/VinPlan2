@@ -1,4 +1,4 @@
-package com.narval.model;
+package com.narval.Models;
 
 import java.util.Arrays;
 import java.util.List;

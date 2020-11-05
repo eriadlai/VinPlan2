@@ -29,7 +29,7 @@ public class Servicio {
 	private String descripcion;
 	
 	@Column(name="fechaInicio", nullable=false, unique=false)
-	private Date fechaFinal;
+	private Date fechaInicio;
 	
 	@Column(name="fechaFinal", nullable=false)
 	private Date fechaFinal;
