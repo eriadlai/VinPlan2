@@ -35,7 +35,7 @@ public class User {
 
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "winery_id", referencedColumnName = "id")
-    private Winery winery;
+	private Winery winery;
 	
 	public int getId() {
 		return id;
