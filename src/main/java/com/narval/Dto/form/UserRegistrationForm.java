@@ -20,7 +20,7 @@ public class UserRegistrationForm {
 	private String name;
 	private String password;
 	private String confirmationPassword;
-	private String role;
+	//private String role;
 	
 	public String getEmail() {
 		return email;
@@ -46,12 +46,12 @@ public class UserRegistrationForm {
 		this.confirmationPassword = confirmationPassword;
 	}
 	
-	public String getRole() {
+	/*public String getRole() {
 		return role;
 	}
 	
 	public void setRole(String role) {
 		this.role = role;
-	}
+	}*/
 	
 }

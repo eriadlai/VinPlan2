@@ -190,7 +190,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #BF0D3E, #e74e70, #32be8f);
+	background-image: linear-gradient(to right, #BF0D3E, #9c163c, #000);
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;

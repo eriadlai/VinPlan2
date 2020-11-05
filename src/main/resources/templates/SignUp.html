@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>SignUp</title>
-	<link rel="stylesheet" type="text/css" href="/src/main/resources/static/SignUpStyle.css">
+	<link rel="stylesheet" type="text/css" href="/css/SignUpStyle.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
-	<link rel="icon" href="/src/main/resources/img/VinPlanLogo_preview_rev_1.png" type="image/png">
+	<link rel="icon" href="/img/VinPlanLogo_preview_rev_1.png" type="image/png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
    
-		<img class="wave" src="/src/main/resources/img/WaveRed.png">
+		<img class="wave" src="/img/WaveRed.png">
 		<div class="container">
-			<div class="img">
-				<img src="/src/main/resources/img/bg.svg">
+			<div class="img" >
+				<img src="/img/bg.svg" >
 			</div>
 			<div class="login-content">
-				<form action="SignUp.html">
-					<img src="/src/main/resources/img/VinPlanLogo_preview_rev_1.png">
+				<form action="/SignUp" method="post">
+					<img src="/img/VinPlanLogo_preview_rev_1.png">
 					<h2 class="title">Welcome</h2>
 					   <div class="input-div one">
 						  <div class="i">
@@ -115,7 +115,7 @@
 						</div>
 						<div class="div">
 								<h5>Knowledge Level</h5>
-								<form action="#">
+								<form action="/SignUp" method="post">
 									<div class="levelOption">
 									  <input id="Lv1" type="radio" name="lvlOpt" checked="checked"/>
 									  <label for="Lv1">
@@ -136,24 +136,7 @@
 									</div>
 						</div>
 					 </div>
-					 <div class="input-div one">
-						<div class="i">
-								<i class="fas fa-user"></i>
-						</div>
-						<div class="div">
-								<h5>Google</h5>
-								<input type="text" class="input">
-						</div>
-					 </div>
-					 <div class="input-div one">
-						<div class="i">
-								<i class="fas fa-user"></i>
-						</div>
-						<div class="div">
-								<h5>Facebook</h5>
-								<input type="text" class="input">
-						</div>
-					 </div>
+				
 					
 					<input type="submit" class="btn" value="Sign Up">
 					<input type="submit" class="btn" value="Back">
@@ -165,6 +148,6 @@
 		
 	
     
-    <script type="text/javascript" src="/src/main/resources/static/js/LoginJScript.js"></script>
+  <script type="text/javascript" src="/js/SignUpJScript.js"></script>
 </body>
 </html>
