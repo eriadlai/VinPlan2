@@ -14,7 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.narval.model.Winery;
+import com.narval.Models.Vinicola;
 
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -42,6 +42,6 @@ public class Servicio {
 	private Date fechaFinal;
 
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "winery_id", referencedColumnName = "id")
-    private Winery winery;
+    @JoinColumn(name = "Vinicola_idVinicola", referencedColumnName = "id")
+    private Vinicola vinicola;
 }

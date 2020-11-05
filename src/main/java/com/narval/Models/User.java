@@ -35,7 +35,7 @@ public class User {
 
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "winery_id", referencedColumnName = "id")
-	private Winery winery;
+	private Vinicola winery;
 	
 	public int getId() {
 		return id;
@@ -85,11 +85,11 @@ public class User {
 		this.active = active;
 	}
 
-	public Winery getWinery() {
+	public Vinicola getWinery() {
 		return winery;
 	}
 
-	public void setWinery(Winery winery) {
+	public void setWinery(Vinicola winery) {
 		this.winery = winery;
 	}
 	

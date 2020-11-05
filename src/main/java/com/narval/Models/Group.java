@@ -29,7 +29,7 @@ public class Group {
     private Roles roles;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Vinicola_id", referencedColumnName = "id")
+    @JoinColumn(name = "Vinicola_idVinicola", referencedColumnName = "id")
     private Vinicola vinicola;
 
     public int getId() {
