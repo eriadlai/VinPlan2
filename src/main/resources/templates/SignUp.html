@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SignUp</title>
+	<link rel="stylesheet" type="text/css" href="/src/main/resources/static/SignUpStyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel="icon" href="/src/main/resources/img/VinPlanLogo_preview_rev_1.png" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+   
+		<img class="wave" src="/src/main/resources/img/WaveRed.png">
+		<div class="container">
+			<div class="img">
+				<img src="/src/main/resources/img/bg.svg">
+			</div>
+			<div class="login-content">
+				<form action="SignUp.html">
+					<img src="/src/main/resources/img/VinPlanLogo_preview_rev_1.png">
+					<h2 class="title">Welcome</h2>
+					   <div class="input-div one">
+						  <div class="i">
+								  <i class="fas fa-user"></i>
+						  </div>
+						  <div class="div">
+								  <h5>Username</h5>
+								  <input type="text" class="input">
+						  </div>
+					   </div>
+					   <div class="input-div pass">
+						<div class="i"> 
+							 <i class="fas fa-lock"></i>
+						</div>
+
+						<div class="div">
+							 <h5>Password</h5>
+							 <input type="password" class="input">
+					 </div>
+				  </div>
+					   <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+								<h5>Name</h5>
+								<input type="text" class="input">
+						</div>
+					 </div>
+					 <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+								<h5>Lastname</h5>
+								<input type="text" class="input">
+						</div>
+					 </div>
+					   
+
+					<div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+								<h5>Email</h5>
+								<input type="text" class="input">
+						</div>
+					 </div>
+					 
+					 <div class="input-div one genderOption">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+								<h5 class="">Gender</h5>
+								<form action="#">
+									<div class="gender">
+									  <input id="male" type="radio" name="sex" checked="checked"/>
+									  <label for="male">
+										<div class="title">Masculino</div><i class="fa fa-male" aria-hidden="true"></i>
+									  </label>
+									  <input id="female" type="radio" name="sex"/>
+									  <label for="female">
+										<div class="title">Femenino</div><i class="fa fa-female" aria-hidden="true"></i>
+									  </label>
+									</div>
+						</div>
+					 </div>
+					 <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5 class="birthdayTitle">Birthday</h5>
+								<input type="date" id="start" name="trip-start"
+									value="2018-07-22"
+									min="2020-01-01" max="3000-12-31">
+						</div>
+					 </div>
+					 
+					 <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						
+						<div class="div">
+							<h5 class="numberTitle">People amount</h5>
+								<input class="NumberSpinner" type="number" value="0"  min="1" max="1000" step="1">
+						</div>
+					 </div>
+					<div class="input-div one genderOption">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+								<h5>Knowledge Level</h5>
+								<form action="#">
+									<div class="levelOption">
+									  <input id="Lv1" type="radio" name="lvlOpt" checked="checked"/>
+									  <label for="Lv1">
+										<div class="title">Nulo</div><i class="fa Lv1" aria-hidden="true"></i>
+									  </label>
+									  <input id="Lv2" type="radio" name="lvlOpt"/>
+									  <label for="Lv2">
+										<div class="title">Bajo</div><i class="fa Lv2" aria-hidden="true"></i>
+									  </label>
+									  <input id="Lv3" type="radio" name="lvlOpt"/>
+									  <label for="Lv3">
+										<div class="title">Intermedio</div><i class="fa Lv3" aria-hidden="true"></i>
+									  </label>
+									  <input id="Lv4" type="radio" name="lvlOpt"/>
+									  <label for="Lv4">
+										<div class="title">Alto</div><i class="fa Lv3" aria-hidden="true"></i>
+									  </label>
+									</div>
+						</div>
+					 </div>
+					 <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+								<h5>Google</h5>
+								<input type="text" class="input">
+						</div>
+					 </div>
+					 <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+								<h5>Facebook</h5>
+								<input type="text" class="input">
+						</div>
+					 </div>
+					
+					<input type="submit" class="btn" value="Sign Up">
+					<input type="submit" class="btn" value="Back">
+				</form>
+				
+			</div>
+			
+		</div>
+		
+	
+    
+    <script type="text/javascript" src="/src/main/resources/static/js/LoginJScript.js"></script>
+</body>
+</html>
