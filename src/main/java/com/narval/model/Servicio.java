@@ -1,7 +1,5 @@
-package com.narval.Models;
+package com.narval.model;
 
-import java.math.BigInteger;
-import java.security.Timestamp;
 
 import java.util.Date;
 import javax.persistence.CascadeType;
@@ -11,11 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-import com.narval.model.Winery;
-
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -36,7 +29,7 @@ public class Servicio {
 	private String descripcion;
 	
 	@Column(name="fechaInicio", nullable=false, unique=false)
-	private Date fechaIncicio;
+	private Date fechaFinal;
 	
 	@Column(name="fechaFinal", nullable=false)
 	private Date fechaFinal;
