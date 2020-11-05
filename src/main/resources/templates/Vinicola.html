@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/src/main/resources/static/VinicolaStyle.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinicolas</title>
+</head>
+<body>
+    
+    <div>
+        <table>
+           <thead>
+               <tr>
+                   <th>Image</th>
+                   <th>Name</th>
+                   <th>Show More</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr th:if="${wineries.empty}">
+                   <td colspan="2"> No hay vinicolas disponibles</td>
+               </tr>
+               <tr th:each="winery : ${wineries}">
+                   <td><span th:text="${winery.name}">Image</span></td>
+                   <td><span th:text="${winery.address}">Name</span></td>
+                   <td><a th:href="@{/wineryServicesView(wineryName=${winery.name})}"><button class="btnWebsite">Website</button></a></td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+
+   <br/>
+  
+</body>
+</html>
