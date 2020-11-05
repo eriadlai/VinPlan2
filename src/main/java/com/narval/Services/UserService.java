@@ -12,14 +12,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.narval.Dto.form.UserRegistrationForm;
-import com.narval.Models.User;
 import com.narval.Models.Usuario;
-
+import com.narval.repository.UserRepository;
 @Service
 public class UserService {
 	
 	@Autowired
-	com.narval.repository.UserRepository userRepository;
+	 UserRepository userRepository;
 	
 	@Autowired
 	PasswordEncoder passwordEncoder;
@@ -46,26 +45,17 @@ public class UserService {
 	public boolean addUser(UserRegistrationForm userRegistration) {
 		
 		Usuario user = new Usuario();
-		
+		user.setUsername(userRegistration.getUsername());
 		user.setEmail(userRegistration.getEmail());
 		user.setName(userRegistration.getName());
 		user.setHashed_password(passwordEncoder.encode(userRegistration.getPassword()));
 		
-		/*switch(userRegistration.getRole()) {
-			case "Administrator":
-				user.setRole("ROLE_ADMIN"); 
-			    break;
-			case "Vintner":
-				user.setRole("ROLE_VINTNER");
-			    break;
-			default:
-				user.setRole("ROLE_TOURIST");
-		}*/
+		
 		
 		// Save record into database
-		int storedUser = userRepository.save(user);
+		Usuario storedUser = userRepository.save(user);
 		
-		return storedUser == 0 ? true : false;
+		return storedUser != null ? true : false;
 	}
 	
 }

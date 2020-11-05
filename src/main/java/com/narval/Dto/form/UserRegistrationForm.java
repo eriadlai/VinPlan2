@@ -18,6 +18,7 @@ public class UserRegistrationForm {
 	}
 
 	private String name;
+	private String username;
 	private String password;
 	private String confirmationPassword;
 	//private String role;
@@ -44,6 +45,14 @@ public class UserRegistrationForm {
 	
 	public void setConfirmationPassword(String confirmationPassword) {
 		this.confirmationPassword = confirmationPassword;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	/*public String getRole() {

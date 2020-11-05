@@ -26,7 +26,6 @@ public class SignUpController {
 		
 		userService.addUser(userRegistration);
 		
-		//redirectAttributes.addFlashAttribute("confirmationMessage",  "Thank you, you will shortly receive an email with instructions on how to reset your password.");
 		
 		return "redirect:/";
 	}

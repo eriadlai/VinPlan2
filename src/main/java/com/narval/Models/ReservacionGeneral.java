@@ -19,7 +19,7 @@ public class ReservacionGeneral {
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="Usuario_id", referencedColumnName = "id")
-    private User usuario;
+    private Usuario usuario;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="Reservacion_Especifica_idReservacion", referencedColumnName = "id")
@@ -33,11 +33,11 @@ public class ReservacionGeneral {
         this.id = id;
     }
 
-    public User getUsuario() {
+    public Usuario getUsuario() {
         return this.usuario;
     }
 
-    public void setUsuario(User usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 

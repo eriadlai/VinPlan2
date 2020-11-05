@@ -21,7 +21,7 @@ public class Usuario {
     private int id;
 
     @Column(name="Username", length=50, nullable=false, unique=false)
-    private int Username;
+    private String Username;
 
     @Column(name="name", length=50, nullable=false, unique=false)
     private String name;
@@ -69,12 +69,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public int getUsername() {
+    public String getUsername() {
         return this.Username;
     }
 
-    public void setUsername(int Username) {
-        this.Username = Username;
+    public void setUsername(String string) {
+        this.Username = string;
     }
 
     public String getName() {

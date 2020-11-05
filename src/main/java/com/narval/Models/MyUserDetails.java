@@ -22,12 +22,10 @@ public class MyUserDetails implements UserDetails {
 		
 	}
 	
-	public MyUserDetails(User user) {
+	public MyUserDetails(Usuario user) {
 		this.email = user.getEmail();
 		this.name = user.getName();
-		this.password = user.getPassword();
-		this.active = user.isActive();
-		this.authorities = Arrays.asList(new SimpleGrantedAuthority(user.getRole()));
+		this.password = user.getHashed_password();
 	}
 
 	@Override
