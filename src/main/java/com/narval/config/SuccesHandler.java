@@ -20,7 +20,7 @@ public class SuccesHandler implements AuthenticationSuccessHandler{
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 		
 		Authentication authentication) throws IOException, ServletException {
-		response.sendRedirect("/");
+		response.sendRedirect("/MainMenu");
 		
 	}
 }
