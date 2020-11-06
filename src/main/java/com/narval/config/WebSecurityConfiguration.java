@@ -34,6 +34,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .antMatchers("/css/*").permitAll()
         .antMatchers(HttpMethod.POST, "/SignUp").permitAll()
     	.antMatchers("/SignUp").permitAll()
+    	.antMatchers("/Error404").permitAll()
         .antMatchers("/img/*").permitAll()
         .antMatchers("/js/*").permitAll()
         .antMatchers("/MainMenu").permitAll()
@@ -42,11 +43,20 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .formLogin()
         	.loginPage("/login").permitAll()
             .successHandler(authSuccesHandler)
-        .and();
+            .defaultSuccessUrl("/MainMenu")
+            .failureUrl("/Error404")
+        .and()
+        .logout()
+    		.clearAuthentication(true)
+    		.invalidateHttpSession(true)    // set invalidation state when logout
+    		.deleteCookies("JSESSIONID")     
+    		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))            
+        .logoutSuccessUrl("/login");
+    
        
     }
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(31);
     }
 }

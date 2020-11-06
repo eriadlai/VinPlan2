@@ -24,7 +24,7 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<lable for="username"><h5>Username</h5></lable>
+           		   		<label for="username"><h5>Username</h5></label>
            		   		<input type="text" id="username" name="username" class="input">
            		   </div>
            		</div>
@@ -33,14 +33,16 @@
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
-           		    	<label for="password"><h5>Password</h5></label>
-           		    	<input type="password"  id="password" name="password" class="input">
+           		    	<label for="hashed_password"><h5>Password</h5></label>
+           		    	<input type="password"  id="hashed_password" name="hashed_password" class="input">
             	   </div>
             	</div>
+			
             	<a href="#">Forgot Password?</a>
                 <input type="submit" class="btn" value="Login">
 				<button type="button" class="btn" value="Sign Up"
-						onclick="window.location.href='/SignUp'">Sign Up</button>                
+						onclick="window.location.href='/SignUp'">Sign Up</button> 
+						               
             </form>
         </div>
     </div>

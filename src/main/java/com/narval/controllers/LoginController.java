@@ -12,6 +12,7 @@ import com.narval.Services.UserService;
 public class LoginController {
 	@Autowired
 	UserService userService;
+	
 	@GetMapping("/login")
 	public String login(Model model) {
 		return "login";

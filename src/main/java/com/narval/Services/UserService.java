@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import com.narval.Dto.form.UserRegistrationForm;
 import com.narval.Models.Usuario;
 import com.narval.repository.UserRepository;
+
 @Service
 public class UserService {
 	
@@ -33,18 +34,18 @@ public class UserService {
 		
 	    return dbUsuarios;
 	}
-	
 	public Usuario findByEmail(String email) throws UsernameNotFoundException {
 		
-		Optional<Usuario> optionalUsuario = userRepository.findByEmail(email);
+		Optional<Usuario> optionalUser = userRepository.findByEmail(email);
 		
-		optionalUsuario.orElseThrow(() -> new UsernameNotFoundException("User Not Found: " + email));
+		optionalUser.orElseThrow(() -> new UsernameNotFoundException("User Not Found: " + email));
 		
-		Usuario dbUsuario = optionalUsuario.get(); 
+		Usuario dbUser = optionalUser.get(); 
 		
 		
-		return dbUsuario;
+		return dbUser;
 	}
+
 	
 	public boolean addUser(UserRegistrationForm userRegistration) {
 		
@@ -55,9 +56,9 @@ public class UserService {
 		user.setHashed_password(passwordEncoder.encode(userRegistration.getPassword()));
 		user.setLastname(userRegistration.getLastname());
 		// Save record into database
-		Usuario storedUser = userRepository.save(user);
+		int storedUser = userRepository.save(user);
 		
-		return storedUser != null ? true : false;
+		return storedUser == 1 ? true : false;
 	}
 	
 }
