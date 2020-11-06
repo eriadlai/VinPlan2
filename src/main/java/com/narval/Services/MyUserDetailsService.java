@@ -16,18 +16,18 @@ import com.narval.repository.UserRepository;
 public class MyUserDetailsService implements UserDetailsService {
 	@Autowired
 	UserRepository userRepository;
-	
-	
-	
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
-		System.out.println("holasi"+username);
-		Optional<Usuario> user = userRepository.findByEmail(username);
-		
-		user.orElseThrow(() -> new UsernameNotFoundException("User Not Found: " + username));
-		System.out.println(user.get().getHashed_password());
-		return user.map(MyUserDetails::new).get();
+		 Usuario user = userRepository.getUserByUsername(username);
+         
+	        if (user == null) {
+	            throw new UsernameNotFoundException("Could not find user");
+	        }
+	         
+	        return new MyUserDetails(user);
 	}
+	
+
 	
 }

@@ -1,6 +1,7 @@
 package com.narval.Models;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -12,42 +13,30 @@ public class MyUserDetails implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String email;
-	private String name;
-	private String password;
-	private boolean active;
-	private List<GrantedAuthority> authorities;
-	
-	public MyUserDetails() {
-		
-	}
-	
+	private Usuario user;
+	     
 	public MyUserDetails(Usuario user) {
-		this.email = user.getEmail();
-		this.name = user.getName();
-		this.password = user.getHashed_password();
+		this.user= user;
 	}
+	 
 
 	@Override
 	public String getUsername() {
-		return email;
+		return user.getEmail();
 	}
 	
 	public String getEmail() {
-		return email;
+		return user.getEmail();
 	}
 
 	public String getName() {
-		return name;
+		return user.getName();
 	}
-
+	@Override
 	public String getPassword() {
-		return password;
+		return user.getHashed_password();
 	}
 
-	public List<GrantedAuthority> getAuthorities() {
-		return authorities;
-	}
 
 	@Override
 	public boolean isAccountNonExpired() {
@@ -65,8 +54,16 @@ public class MyUserDetails implements UserDetails {
 	}
 
 	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
 	public boolean isEnabled() {
-		return this.active;
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }

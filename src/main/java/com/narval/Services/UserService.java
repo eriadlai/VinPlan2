@@ -28,25 +28,6 @@ public class UserService {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	
-	public List<Usuario> findAll() {
-		
-		List<Usuario> dbUsuarios = userRepository.findAll();
-		
-	    return dbUsuarios;
-	}
-	public Usuario findByEmail(String email) throws UsernameNotFoundException {
-		
-		Optional<Usuario> optionalUser = userRepository.findByEmail(email);
-		
-		optionalUser.orElseThrow(() -> new UsernameNotFoundException("User Not Found: " + email));
-		
-		Usuario dbUser = optionalUser.get(); 
-		
-		
-		return dbUser;
-	}
-
-	
 	public boolean addUser(UserRegistrationForm userRegistration) {
 		
 		Usuario user = new Usuario();
@@ -56,9 +37,9 @@ public class UserService {
 		user.setHashed_password(passwordEncoder.encode(userRegistration.getPassword()));
 		user.setLastname(userRegistration.getLastname());
 		// Save record into database
-		int storedUser = userRepository.save(user);
+		Usuario storedUser = userRepository.save(user);
 		
-		return storedUser == 1 ? true : false;
+		return storedUser !=null ? true : false;
 	}
 	
 }

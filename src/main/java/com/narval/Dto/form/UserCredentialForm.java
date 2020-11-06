@@ -8,15 +8,13 @@ package com.narval.Dto.form;
 public class UserCredentialForm {
 	private String email;
 	private String password;
-	private String role;
 	
 	public UserCredentialForm() {	
 	}
 	
-	public UserCredentialForm(String email, String password, String role) {
+	public UserCredentialForm(String email, String password) {
 		this.email = email;
 		this.password = password;
-		this.role = role;
 	}
 	
 	public String getEmail() {
@@ -35,17 +33,10 @@ public class UserCredentialForm {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
 
 	@Override
 	public String toString() {
-		return "UserCredential [email=" + email + ", password=" + password + ", role=" + role + ", toString()="
+		return "UserCredential [email=" + email + ", password=" + password + ", toString()="
 				+ super.toString() + "]";
 	}
 	

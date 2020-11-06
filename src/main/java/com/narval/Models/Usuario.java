@@ -20,7 +20,7 @@ public class Usuario {
     private int id;
 
     @Column(name="username", length=50, nullable=false, unique=false)
-    private String Username;
+    private String username;
 
     @Column(name="name", length=50, nullable=false, unique=false)
     private String name;
@@ -45,11 +45,11 @@ public class Usuario {
     }
 
     public String getUsername() {
-        return this.Username;
+        return this.username;
     }
 
     public void setUsername(String string) {
-        this.Username = string;
+        this.username= string;
     }
 
     public String getName() {
