@@ -18,6 +18,7 @@ public class UserRegistrationForm {
 	}
 
 	private String name;
+	private String lastname;
 	private String username;
 	private String password;
 	private String confirmationPassword;
@@ -53,6 +54,14 @@ public class UserRegistrationForm {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 	
 	/*public String getRole() {

@@ -1,5 +1,9 @@
 package com.narval.Services;
 
+import java.security.Timestamp;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,9 +53,7 @@ public class UserService {
 		user.setEmail(userRegistration.getEmail());
 		user.setName(userRegistration.getName());
 		user.setHashed_password(passwordEncoder.encode(userRegistration.getPassword()));
-		
-		
-		
+		user.setLastname(userRegistration.getLastname());
 		// Save record into database
 		Usuario storedUser = userRepository.save(user);
 		

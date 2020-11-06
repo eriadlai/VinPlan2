@@ -20,16 +20,7 @@ public class SuccesHandler implements AuthenticationSuccessHandler{
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 		
 		Authentication authentication) throws IOException, ServletException {
-		/*Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
-		
-		if (roles.contains("ROLE_ADMIN")) {
-            response.sendRedirect("/admin-dashboard");
-        } else if (roles.contains("ROLE_VINTNER")) {
-        	response.sendRedirect("/winery-dashboard");
-        } else {
-        	response.sendRedirect("/tourist-dashboard");
-        }*/
-		
+		response.sendRedirect("/");
 		
 	}
 }
