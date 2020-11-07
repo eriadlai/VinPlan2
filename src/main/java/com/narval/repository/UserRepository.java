@@ -18,9 +18,9 @@ import com.narval.Models.Usuario;
 @Repository
 public interface UserRepository extends CrudRepository<Usuario, Integer>{
 	
-	
-	   @Query("SELECT u FROM Usuario u WHERE u.username = :username")
+	   	@Query("SELECT u FROM Usuario u WHERE u.username = :username")
 	    public Usuario getUserByUsername(@Param("username") String username);
-
+	   	
+	   	
 }
 
