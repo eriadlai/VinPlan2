@@ -7,7 +7,7 @@ public class VinicolaDto {
 	private int id;
 	private String nombre;
 	private String direccion;
-	private int codigoPostal;
+	private int codigo_post;
 	
 
 	public int getId() {
@@ -18,11 +18,11 @@ public class VinicolaDto {
 		this.id = id;
 	}
 	
-	public String getnombre() {
+	public String getNombre() {
 		return nombre;
 	}
 	
-	public void setnombre(String nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
@@ -34,8 +34,11 @@ public class VinicolaDto {
 		this.direccion = direccion;
 	}
 	
-	public int getCodigoPostal() {
-		return codigoPostal;
+	public int getCodigo_post() {
+		return codigo_post;
+	}
+	public void setCodigo_post(int codigoPost) {
+		this.codigo_post=codigoPost;
 	}
 	
 

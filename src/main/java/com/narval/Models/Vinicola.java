@@ -25,8 +25,8 @@ public class Vinicola {
     @Column(name="direccion", length=50, nullable=false, unique=false)
     private String direccion;
 
-    @Column(name="codigoPost", length=10, nullable=false, unique=false)
-    private int codigoPost;
+    @Column(name="codigo_post", length=10, nullable=false, unique=false)
+    private int codigo_post;
 
     public int getId() {
         return this.id;
@@ -53,11 +53,11 @@ public class Vinicola {
     }
 
     public int getCodigoPost() {
-        return this.codigoPost;
+        return this.codigo_post;
     }
 
-    public void setCodigoPost(int codigoPost) {
-        this.codigoPost = codigoPost;
+    public void setCodigoPost(int codigo_post) {
+        this.codigo_post= codigo_post;
     }
 //fin
     

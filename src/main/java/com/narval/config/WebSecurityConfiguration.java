@@ -55,7 +55,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
     	http.authorizeRequests()
     	.antMatchers("/login").permitAll()
+    	.antMatchers("/Error404").permitAll()
     	.antMatchers(HttpMethod.POST,"/MainMenu").permitAll()
+    	.antMatchers(HttpMethod.GET,"/MainMenu").permitAll()
     	.antMatchers("/css/*").permitAll()
     	.antMatchers("/img/*").permitAll()
     	.antMatchers("/static/").permitAll()
@@ -65,9 +67,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     	.and()
     	.formLogin().permitAll()
     	.loginPage("/login")
-    		.successForwardUrl("/MainMenu")
+    		.successHandler(authenticationSuccessHandler)
+    		.failureForwardUrl("/Error404")
     	.and()
-    	.logout().permitAll();
+    	.logout();
   
     
        
