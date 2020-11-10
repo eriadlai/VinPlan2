@@ -6,17 +6,24 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
-
+import java.util.UUID;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.narval.Dto.form.UserRegistrationForm;
+import com.narval.Models.Token;
 import com.narval.Models.Usuario;
+import com.narval.repository.TokenRepository;
 import com.narval.repository.UserRepository;
 
 @Service
@@ -28,6 +35,13 @@ public class UserService {
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	
+	@Autowired 
+	TokenRepository tokenRepository;
+	
+	@Autowired
+	EmailService emailService;
+	
+	
 	public boolean addUser(UserRegistrationForm userRegistration) {
 		
 		Usuario user = new Usuario();
@@ -36,10 +50,27 @@ public class UserService {
 		user.setName(userRegistration.getName());
 		user.setHashed_password(passwordEncoder.encode(userRegistration.getPassword()));
 		user.setLastname(userRegistration.getLastname());
-		// Save record into database
-		Usuario storedUser = userRepository.save(user);
+		user.setActive(0);
+		if(userRepository.getUserByUsername(user.getUsername())!=null) {
+			return false;
+		}
 		
-		return storedUser !=null ? true : false;
+		Token confirmationToken =new Token(user);
+		confirmationToken.setToken(UUID.randomUUID().toString());
+		System.out.println(confirmationToken.getToken());
+		tokenRepository.save(confirmationToken);
+		
+		SimpleMailMessage mailMessage= new SimpleMailMessage();
+		mailMessage.setTo(user.getEmail());
+		mailMessage.setSubject("No reply");
+		mailMessage.setFrom("david.murillo@cetys.edu.mx");
+		mailMessage.setText("Para confirmar tu cuenta, por favor, ingrese al siguiente link \n"
+		+"http://localhost:8080/confirm-account?token="+confirmationToken.getToken());
+		emailService.sendEmail(mailMessage);
+		
+		return true;
+
 	}
+
 	
 }

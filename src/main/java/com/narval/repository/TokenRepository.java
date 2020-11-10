@@ -1,8 +1,11 @@
 package com.narval.repository;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 import com.narval.Models.Token;
 
 
-public interface TokenRepository extends JpaRepository<Token, String> {
-	
+@Repository
+public interface TokenRepository extends CrudRepository<Token, String> {
+	Token findByToken(String token);
 }

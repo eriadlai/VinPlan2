@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.narval.Dto.form.UserRegistrationForm;
+import com.narval.Services.EmailService;
 import com.narval.Services.UserService;
+import com.narval.repository.TokenRepository;
 
 @Controller
 public class SignUpController {
@@ -25,9 +27,9 @@ public class SignUpController {
 		return "SignUp";
 	}
 	@PostMapping("/SignUp")
-	public String loginSubmit(@ModelAttribute UserRegistrationForm userRegistration, /*RedirectAttributes redirectAttributes,*/ Model model) {
+	public String signUp(@ModelAttribute UserRegistrationForm userRegistration, /*RedirectAttributes redirectAttributes,*/ Model model) {
 		logger.info("New user registration");
-
+		
 		userService.addUser(userRegistration);
 		
 		return "redirect:/";

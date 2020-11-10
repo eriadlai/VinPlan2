@@ -33,6 +33,9 @@ public class Usuario {
 
     @Column(name="email", length=254, nullable=false, unique=false)
     private String email;
+    
+    @Column(name="active", nullable=false)
+	private int active;
 
     
 
@@ -83,6 +86,15 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+	public int isActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
+	}
+
 
 
 }

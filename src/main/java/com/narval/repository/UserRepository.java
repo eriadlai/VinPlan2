@@ -7,6 +7,7 @@ import java.util.Optional;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -21,6 +22,9 @@ public interface UserRepository extends CrudRepository<Usuario, Integer>{
 	   	@Query("SELECT u FROM Usuario u WHERE u.username = :username")
 	    public Usuario getUserByUsername(@Param("username") String username);
 	   	
-	   	
+	   	@Modifying
+	   	@Query("update Usuario u set u.active = 1 where u.id= :id")
+	   	void activateUser(@Param("id") int id);
+
 }
 

@@ -18,7 +18,6 @@ public class MyUserDetails implements UserDetails {
 	public MyUserDetails(Usuario user) {
 		this.user= user;
 	}
-	 
 
 	@Override
 	public String getUsername() {

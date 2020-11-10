@@ -23,8 +23,13 @@ public class MyUserDetailsService implements UserDetailsService {
          
 	        if (user == null) {
 	            throw new UsernameNotFoundException("Could not find user");
+	            
 	        }
-	         
+	        
+	        if(user.isActive()==0) {
+	            throw new UsernameNotFoundException("El usuario no ha sido verificado");
+	        }
+	        
 	        return new MyUserDetails(user);
 	}
 	
