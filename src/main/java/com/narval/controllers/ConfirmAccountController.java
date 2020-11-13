@@ -22,7 +22,6 @@ public class ConfirmAccountController {
 	
 	@RequestMapping(value="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
 	public String confirmUserAccount(@RequestParam("token")String confirmationTokenString) {
-    	System.out.println("hola si");
 		Token token=tokenRepository.findByToken(confirmationTokenString);
 		if(token!=null) {
 			Usuario user=userRepository.getUserByUsername(token.getUserId().getUsername());

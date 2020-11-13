@@ -9,14 +9,6 @@ package com.narval.Dto.form;
 public class UserRegistrationForm {
 
 	private String email;
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	private String name;
 	private String lastname;
 	private String username;
@@ -64,6 +56,13 @@ public class UserRegistrationForm {
 		this.lastname = lastname;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	/*public String getRole() {
 		return role;
 	}
