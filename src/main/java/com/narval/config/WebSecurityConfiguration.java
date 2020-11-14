@@ -54,15 +54,18 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
     	http.authorizeRequests()
+    	.antMatchers("/MainMenu").hasAuthority("Turista")
+    	.antMatchers("/VinicolaEdit").permitAll()
     	.antMatchers("/login").permitAll()
     	.antMatchers("/Error404").permitAll()
     	.antMatchers("/confirm-account").permitAll()
     	.antMatchers("/css/*").permitAll()
     	.antMatchers("/img/*").permitAll()
-    	.antMatchers("/registroVinicola").permitAll()
     	.antMatchers("/static/").permitAll()
     	.antMatchers("/templates").permitAll()
+    	.antMatchers("/SignUp/*").permitAll()
     	.antMatchers("/SignUp").permitAll()
+
     	.anyRequest().authenticated()
     	.and()
     	.formLogin().permitAll()

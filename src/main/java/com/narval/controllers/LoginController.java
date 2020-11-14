@@ -20,7 +20,7 @@ public class LoginController {
 	public String login(Model model) {
 		Authentication auth= SecurityContextHolder.getContext().getAuthentication();
 		if(auth.getPrincipal() instanceof UserDetails) {
-			return "redirect:/MainMenu";
+			return "MainMenu";
 		}
 		return "login";
 	}

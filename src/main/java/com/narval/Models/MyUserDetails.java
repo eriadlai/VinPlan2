@@ -1,8 +1,12 @@
 package com.narval.Models;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+
+import javax.management.relation.Role;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,7 +18,9 @@ public class MyUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	
 	private Usuario user;
-	     
+	
+	private List<GrantedAuthority> autorities=new ArrayList<GrantedAuthority>();
+	
 	public MyUserDetails(Usuario user) {
 		this.user= user;
 	}
@@ -51,11 +57,15 @@ public class MyUserDetails implements UserDetails {
 	public boolean isCredentialsNonExpired() {
 		return true;
 	}
-
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
+
+		Set<Roles> roles=user.getRoles();
+		List<SimpleGrantedAuthority> authorities= new ArrayList<>();
+		for (Roles role : roles) {
+			authorities.add(new SimpleGrantedAuthority(role.getName()));
+		}
+		return authorities;
 	}
 
 

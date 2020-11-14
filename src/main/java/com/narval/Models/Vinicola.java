@@ -25,9 +25,32 @@ public class Vinicola {
     @Column(name="direccion", length=50, nullable=false, unique=false)
     private String direccion;
 
-    @Column(name="codigo_post", length=10, nullable=false, unique=false)
+    @Column(name="codigopost", length=10, nullable=false, unique=false)
     private int codigo_post;
 
+    @Column(name="descripcion", length=999, nullable=false, unique=false)
+    private String descripcion;
+    
+    @Column(name="logo", length=100, nullable=true, unique=false)
+    private String logo;
+    
+    public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+	
     public int getId() {
         return this.id;
     }

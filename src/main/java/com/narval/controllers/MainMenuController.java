@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainMenuController {
-	@Value("${spring.application.name}")
-	String appName;
 	
-	@RequestMapping(value="/MainMenu", method = RequestMethod.GET)
+	@GetMapping("/MainMenu")
     public String MainMenu(Model model) {
-        model.addAttribute("appName", appName);
         return "MainMenu";
     }	
 

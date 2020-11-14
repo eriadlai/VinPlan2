@@ -1,14 +1,8 @@
 package com.narval.Services;
 
-import java.security.Timestamp;
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -21,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.narval.Dto.form.UserRegistrationForm;
+import com.narval.Models.Roles;
 import com.narval.Models.Token;
 import com.narval.Models.Usuario;
+import com.narval.repository.RolesRepository;
 import com.narval.repository.TokenRepository;
 import com.narval.repository.UserRepository;
 
@@ -31,6 +27,9 @@ public class UserService {
 	
 	@Autowired
 	 UserRepository userRepository;
+	
+	@Autowired
+	RolesRepository rolesRepository;
 	
 	@Autowired
 	PasswordEncoder passwordEncoder;
@@ -42,8 +41,9 @@ public class UserService {
 	EmailService emailService;
 	
 	
-	public boolean addUser(UserRegistrationForm userRegistration) {
+	public boolean addUser(UserRegistrationForm userRegistration,String role) {
 		
+		System.out.println(role);
 		Usuario user = new Usuario();
 		user.setUsername(userRegistration.getUsername());
 		user.setEmail(userRegistration.getEmail());
@@ -51,6 +51,11 @@ public class UserService {
 		user.setHashed_password(passwordEncoder.encode(userRegistration.getPassword()));
 		user.setLastname(userRegistration.getLastname());
 		user.setActive(0);
+		System.out.println(role);
+		Roles rol=rolesRepository.getRoleByName(role);
+		user.addRoll(rol);
+		rol.addUser(user);
+		rolesRepository.save(rol);
 		if(userRepository.getUserByUsername(user.getUsername())!=null) {
 			return false;
 		}

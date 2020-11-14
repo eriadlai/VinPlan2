@@ -4,13 +4,20 @@ package com.narval.Models;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 @Entity
 @Table(name = "Usuario", schema="vin-plan")
 public class Usuario {
@@ -35,10 +42,22 @@ public class Usuario {
     private String email;
     
     @Column(name="active", nullable=false)
-	private int active;
+	private int active;        
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="user_roles",
+    joinColumns=@JoinColumn(name="usuario_id"), inverseJoinColumns = @JoinColumn(name="roles_id"))
+    private Set<Roles> roles=new HashSet<>();
+    
+    public Set<Roles> getRoles(){
+    	return this.roles;
+    }
 
     
-
+    public void addRoll(Roles rol) {
+    	this.roles.add(rol);
+    }
+ 
     public int getId() {
         return this.id;
     }
@@ -94,6 +113,9 @@ public class Usuario {
 	public void setActive(int active) {
 		this.active = active;
 	}
+	
+	
+	
 
 
 

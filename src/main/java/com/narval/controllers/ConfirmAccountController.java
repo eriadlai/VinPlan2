@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.narval.Models.Token;
 import com.narval.Models.Usuario;
+import com.narval.repository.RolesRepository;
 import com.narval.repository.TokenRepository;
 import com.narval.repository.UserRepository;
 
@@ -19,6 +20,8 @@ public class ConfirmAccountController {
 	
 	@Autowired 
 	UserRepository userRepository;
+	@Autowired
+	RolesRepository rolesRepository;
 	
 	@RequestMapping(value="/confirm-account", method= {RequestMethod.GET, RequestMethod.POST})
 	public String confirmUserAccount(@RequestParam("token")String confirmationTokenString) {

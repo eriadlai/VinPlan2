@@ -15,7 +15,7 @@
 				<img src="/img/bg.svg">
 			</div>
 			<div class="login-content">
-				<form action="/SignUp" method="post">
+				<form th:action="@{/SignUp}" method="post">
 					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
 					<img src="/img/VinPlanLogo_preview_rev_1.png">
@@ -63,6 +63,27 @@
 						</div>
 					 </div>
 					   
+					 <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5>Apellido</h5>
+					<input class="input" type="text" placeholder="" name="lastname" required> 
+						</div>
+					 </div>
+					 
+					 <div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+							<h5>Rol</h5>
+							<select  id="role" name="role" >
+								<option th:each="rol : ${roles}" th:value="${rol}" th:text="${rol}"></option>
+							</select>
+						</div>
+					 </div>
 
 					<div class="input-div one">
 						<div class="i">
@@ -84,6 +105,7 @@
 						</div>
 					 </div>
 					
+	
 					 <button type="submit" class="btn">Create an Account</button>
 					 <div align="center">
 						<button type="submit" class="btn"

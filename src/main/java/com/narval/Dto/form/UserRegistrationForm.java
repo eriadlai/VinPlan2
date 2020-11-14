@@ -14,6 +14,7 @@ public class UserRegistrationForm {
 	private String username;
 	private String password;
 	private String confirmationPassword;
+	private String role;
 	//private String role;
 	
 	public String getEmail() {
@@ -63,12 +64,12 @@ public class UserRegistrationForm {
 	public void setName(String name) {
 		this.name = name;
 	}
-	/*public String getRole() {
+	public String getRole() {
 		return role;
 	}
 	
 	public void setRole(String role) {
 		this.role = role;
-	}*/
+	}
 	
 }
