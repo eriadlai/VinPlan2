@@ -29,7 +29,9 @@ public class SuccesHandler implements AuthenticationSuccessHandler{
 		
 		for(GrantedAuthority grantedAuthority : authorities) {
 			if(grantedAuthority.getAuthority().equals("Turista")) {
-				redirectUrl="/MainMenu";
+				redirectUrl="/TouristDashboard";
+			}else if(grantedAuthority.getAuthority().equals("Vinicola")){
+				redirectUrl="/registroVinicola";	
 			}
 			
 		}

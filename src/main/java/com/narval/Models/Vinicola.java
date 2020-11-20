@@ -22,13 +22,13 @@ public class Vinicola {
     @Column(name="nombre", length=50, nullable=false, unique=false)
     private String nombre;
 
-    @Column(name="direccion", length=50, nullable=false, unique=false)
+    @Column(name="direccion", length=50, nullable=true, unique=false)
     private String direccion;
 
     @Column(name="codigopost", length=10, nullable=false, unique=false)
     private int codigo_post;
 
-    @Column(name="descripcion", length=999, nullable=false, unique=false)
+    @Column(name="descripcion", length=999, nullable=true, unique=false)
     private String descripcion;
     
     @Column(name="logo", length=100, nullable=true, unique=false)
