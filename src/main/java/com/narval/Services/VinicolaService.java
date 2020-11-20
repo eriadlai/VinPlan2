@@ -23,6 +23,10 @@ public class VinicolaService {
 	    return dbVinicolas;
 	}
 	
+	public List<Vinicola> getVinicolaByName(String location) {
+		List<Vinicola> dbVinicola=vinicolaRepository.getWineryByLocation(location);
+		return dbVinicola;
+	}
 	public boolean addVinicola(VinRegistrationForm vinRegistrationForm){
 		Vinicola vin= new Vinicola();
 		vin.setNombre(vinRegistrationForm.getNombre());

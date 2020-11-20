@@ -5,6 +5,7 @@
     <title>VinPlan</title>
     <link rel="shortcut icon" href="/img/VinPlanLogo_preview_rev_1.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -50,8 +51,10 @@
                 <a class="nav-link" href="Contactanos.html">CONTACTANOS</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" th:action="@{/Vinicola}" method="post" >
+            <input class="form-control mr-sm-2" type="search" placeholder="Ubicacion" aria-label="Search" id="ubicacion" name="ubicacion">
+            <input class="form-control mr-sm-2" type="search" placeholder="Fecha" aria-label="Search">
+
             <button class="btn btn-outline my-2 my-sm-0" type="submit">BUSCAR</button>
         </form>
     </div>
