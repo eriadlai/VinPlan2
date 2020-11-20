@@ -22,6 +22,9 @@ public interface UserRepository extends CrudRepository<Usuario, Integer>{
 	   	@Query("SELECT u FROM Usuario u WHERE u.username = :username")
 	    public Usuario getUserByUsername(@Param("username") String username);
 	   	
+	   	@Query("SELECT u.id FROM Usuario u WHERE u.email = :email")
+	   	public int getIdByEmail(@Param("email") String email);
+	   	
 	   	@Modifying
 	   	@Query("update Usuario u set u.active = 1 where u.id= :id")
 	   	void activateUser(@Param("id") int id);
