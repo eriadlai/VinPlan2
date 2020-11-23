@@ -6,6 +6,10 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -77,5 +81,17 @@ public class UserService {
 
 	}
 
+	public static UserDetails currentUserDetails(){
+	    SecurityContext securityContext = SecurityContextHolder.getContext();
+	    Authentication authentication = securityContext.getAuthentication();
+	    if (authentication != null) {
+	        Object principal = authentication.getPrincipal();
+	        return principal instanceof UserDetails ? (UserDetails) principal : null;
+	    }
+	    return null;
+	}
 	
+	public int getIdByEmail(String email) {
+		return userRepository.getIdByEmail(email);
+	}
 }

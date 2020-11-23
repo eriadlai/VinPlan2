@@ -20,30 +20,33 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "servicio", schema="vin-plan")
+@Table(name = "servicio", schema = "vin-plan")
 public class Servicio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name="nombre", length=30, nullable=false, unique=true)
+	@Column(name = "nombre", length = 30, nullable = false, unique = true)
 	private String nombre;
-	
-	@Column(name="costo", length=50, nullable=false, unique=false)
+
+	@Column(name = "costo", length = 50, nullable = false, unique = false)
 	private Double costo;
-	
-	@Column(name="descripcion", length=500, nullable=false, unique=false)
+
+	@Column(name = "tipo", length = 50, nullable = false, unique = false)
+	private String tipo;
+
+	@Column(name = "descripcion", length = 500, nullable = false, unique = false)
 	private String descripcion;
-	
-	@Column(name="fechainicio", nullable=true, unique=false)
-	private Date fechaIncicio;
-	
-	@Column(name="fechafinal", nullable=true)
+
+	@Column(name = "fechaInicio", nullable = true, unique = false)
+	private Date fechaInicio;
+
+	@Column(name = "fechafinal", nullable = true)
 	private Date fechaFinal;
 
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Vinicola_idvinicola", referencedColumnName = "id")
-    private Vinicola vinicola;
+	@JoinColumn(name = "Vinicola_idvinicola", referencedColumnName = "id")
+	private Vinicola vinicola;
 
 	public int getId() {
 		return id;
@@ -52,7 +55,13 @@ public class Servicio {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public String getTipo() {
+		return tipo;
+	}
 
+	public void setTipo(String tipo) {
+		this.tipo=tipo;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -77,12 +86,12 @@ public class Servicio {
 		this.descripcion = descripcion;
 	}
 
-	public Date getFechaIncicio() {
-		return fechaIncicio;
+	public Date getFechaInicio() {
+		return fechaInicio;
 	}
 
-	public void setFechaIncicio(Date fechaIncicio) {
-		this.fechaIncicio = fechaIncicio;
+	public void setFechaIncicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
 	}
 
 	public Date getFechaFinal() {
