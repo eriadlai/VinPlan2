@@ -18,8 +18,7 @@ public class TokenService {
 		
 		Token token = new Token();
 		token.setUserId(user);
-		token.setExpirationTime(new Date());
-		token.setActive(true);
+
 		
 		tokenRepository.save(token);
 		
