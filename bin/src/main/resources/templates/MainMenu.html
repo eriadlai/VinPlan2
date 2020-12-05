@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <link rel="stylesheet" href="/css/MainMenuStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+</head>
+<body>
+    <div class="container">
+        <div class="split left">
+          <h1>Vinicolas</h1>
+          <a th:href="@{/Vinicola}" class="button">Ver Mas</a>
+        </div>
+        <div class="split right">
+          <h1>Registrar Vinicolas</h1>
+          <a th:href="@{/registroVinicola}" class="button">Registrar</a>
+        </div>
+        
+      </div>
+      <div class="container feet">
+            <a href="#" class="patas">Log Out</a>
+     
+            
+        
+      </div>
+      
+      <script type="text/javascript" src="/js/MainMenuJScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <title>SignUp</title>
+	<link rel="stylesheet" type="text/css" href="/css/SignUpStyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel="icon" href="/img/VinPlanLogo_preview_rev_1.png" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+   
+		<img class="wave" src="/img/WinerieRegister.png">
+		<div class="container">
+			<div class="img">
+				
+			</div>
+			<div class="login-content">
+				<form action="/SignUp" method="post">
+					<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+					<h2 class="title">Registrate!</h2>
+					   <div class="input-div one">
+						  <div class="i">
+								  <i class="fas fa-user"></i>
+						  </div>
+						  <div class="div">
+								  <h5>Correo</h5>
+					<input class="input" type="text" placeholder="" name="email" required> 
+						  </div>
+					   </div>
+
+					   <div class="input-div pass">
+						<div class="i"> 
+							 <i class="fas fa-lock"></i>
+						</div>
+
+						<div class="div">
+							<h5>Usuario</h5>
+					<input class="input" type="text" placeholder="" name="username" required> 
+					 </div>
+				  </div>
+
+					   <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+								<h5>Nombre</h5>
+					<input class="input" type="text" placeholder="" name="name" required> 
+						</div>
+					 </div>
+
+
+					 <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5>Apellido</h5>
+					<input class="input" type="text" placeholder="" name="lastname" required> 
+						</div>
+					 </div>
+					   
+
+					<div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5>Contraseña</h5>
+							<input class="input" type="password" placeholder="" name="password" required>
+						</div>
+					 </div>
+
+					 <div class="input-div one">
+						<div class="i">
+								<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5>Confirma Contraseña</h5>
+					<input class="input" type="password" placeholder="" name="password_confirmation" required>
+						</div>
+					 </div>
+					
+					 <button type="submit" class="btn">Crear mi cuenta</button>
+					 <div align="center">
+						<button type="submit" class="btn"
+							onclick="window.location.href='/'">Cancelar</button>
+					</div>
+	
+				</form>
+				
+			</div>
+			
+		</div>
+		
+	
+    
+    <script type="text/javascript" src="/js/EditJScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+<link rel="icon"
+	href="/img/VinPlanLogo_preview_rev_1.png"
+	type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDITAR</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="img"></div>
+		<div class="login-content">
+			<form th:action="@{/VinicolaEdit}" method="post">
+				<h2 class="title">EDITAR</h2>
+
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<h5>ID</h5>
+						<input type="number" id="ID" Name="ID" class="input">
+					</div>
+				</div>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+
+					<div class="div">
+						<h5>Nombre</h5>
+						<input type="text" id="Nombre" name="Nombre" class="input">
+					</div>
+				</div>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<h5>Logo</h5>
+						<input type="text" id="Logo" name="Logo" class="input">
+					</div>
+				</div>
+
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<h5>Direccion</h5>
+						<input type="text" id="Direccion" name="Direccion" class="input">
+					</div>
+				</div>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<h5>Codigo postal</h5>
+						<input type="number" id="CodigoPostal" name="CodigoPostal" class="input">
+					</div>
+				</div>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<h5>Descripcion</h5>
+						<input type="text" id="Descripcion" name="Descripcion" class="input">
+					</div>
+				</div>
+				<input type="submit" class="btn" id="BtnEdit" value="EDITAR">
+				<input type="submit" class="btn" id="BtnCancelar" value="CANCELAR">
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/CSS/js/EditJScript.js"></script>
+</body>
+</html>

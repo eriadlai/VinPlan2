@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+	<link rel="stylesheet" type="text/css" href="/css/LoginStyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel="icon" href="/img/VinPlanLogo_preview_rev_1.png" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    
+    <img class="wave" src="/img/Login.png">
+	<div class="container">
+		<div class="img">		
+		</div>
+		<div class="login-content">
+			<form th:action="@{/login}" method="post">
+				<h2 class="title">Bienvenido de vuelta</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<label for="username"><h5>Usuario</h5></label>
+           		   		<input type="text" id="username" name="username" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<label for="hashed_password"><h5>Contraseña</h5></label>
+           		    	<input type="password"  id="password" name="password" class="input">
+            	   </div>
+            	</div>
+			
+            	<a href="#">Olvide mi Contraseña</a>
+                <input type="submit" class="btn" value="Login">
+				<button type="button" class="btn" value="Sign Up"
+						onclick="window.location.href='/SignUp'">Sign Up</button> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>

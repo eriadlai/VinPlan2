@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/VinicolaStyle.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+</head>
+<body>
+    
+    <div>
+        <table>
+           <thead>
+               <tr>
+                  <th>Nombre</th>
+                  <th>Descripcion</th>
+                  <th>Costo</th>
+                  <th>Inicio</th>
+                  <th>Fin</th>
+                  <th>Otros</th>
+                   <th>Reserva</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr th:if="${servicios.empty}">
+                   <td colspan="2"> No hay servicios disponibles</td>
+               </tr>
+               <tr th:each="servicio : ${servicios}">
+                   <td><span th:text="${servicio.nombre}">Nombre</span></td>
+                   <td><span th:text="${servicio.descripcion}">Descripcion</span></td>
+                   <td><span th:text="${servicio.costo}">Costo</span></td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+
+   <br/>
+  <p>Politicas de cancelacion</p>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem quasi fugiat voluptatibus
+       autem tempora, ab nesciunt! Quo impedit ipsum iusto vitae ipsam sed reiciendis tempore,
+        voluptatem explicabo nemo quaerat autem ut? Voluptatibus deserunt ipsum facere debitis quo odit.
+         Modi, quo.</p>
+         
+</body>
+</html>
